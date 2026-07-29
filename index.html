@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Day | App</title>
+</head>
+<body>
+    <div id="app">
+        <aside>
+            <header>
+                <h1>Agende um atendimento</h1>
+                <p>Selecione data, horário e informe o nome do cliente para criar o agendamento</p>
+            </header>
+            <section class="scheduling-date">
+                <p class="label-scheduling">Data</p>
+                <input type="date" name="date" id="date">
+            </section>
+            <section class="schedules">
+                <p class="label-scheduling">Horários</p>
+                <div>
+                    <span>Manhã</span>
+                    <div class="schedule-period" data-period="morning"></div>
+                </div>
+                <div>
+                    <span>Tarde</span>
+                    <div class="schedule-period" data-period="afternoon"></div>
+                </div>
+                <div>
+                    <span>Noite</span>
+                    <div class="schedule-period" data-period="night"></div>
+                </div>
+            </section>
+            <form class="form-to-schedule">
+                <div>
+                    <label for="client-name">Cliente</label>
+                    <input id="client-name" type="text" name="client">
+                </div>
+                <button type="submit">Agendar</button>
+            </form>
+        </aside>
+        <main>
+            <section>
+                <header>
+                    <h2>Sua agenda</h2>
+                    <p>Consulte os seus cortes de cabelo agendados por dia</p>
+                </header>
+                <div>
+                    <input type="date" id="date-s" name="date-s">
+                </div>
+            </section>
+            <section id="appointments" class="schedule-times">
+                <div class="card-schedule">
+                    <header>
+                        <div>
+                            <img src="" alt="icone do sol">
+                            Manhã
+                        </div>
+                        <div>09-12h</div>
+                    </header>
+                    <div class="appointment">
+                        <time>09:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                    <div class="appointment">
+                        <time>10:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                    <div class="appointment">
+                        <time>11:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                </div>
+
+                <div class="card-schedule">
+                    <header>
+                        <div>
+                            <img src="" alt="icone do sol tarde">
+                            Tarde
+                        </div>
+                        <div>13-18h</div>
+                    </header>
+                    <div class="appointment">
+                        <time>13:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                    <div class="appointment"> 
+                        <time>14:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                    <div class="appointment">
+                        <time>15:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                </div>
+
+                <div class="card-schedule">
+                    <header>
+                        <div>
+                            <img src="" alt="icone da noite">
+                            Noite
+                        </div>
+                        <div>19-22h</div>
+                    </header>
+                    <div class="appointment"> 
+                        <time>19:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                    <div class="appointment">
+                        <time>20:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                    <div class="appointment">
+                        <time>21:00</time>
+                        <span>Luiz Felipe</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
