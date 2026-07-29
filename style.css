@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    /* Product */
+    --yellow-light: #DBC170;
+    --yellow: #B8952E;
+    --yellow-dark: #846F2E;
+
+    /* Gray Scale */
+    --gray-100: #F5F4F5;
+    --gray-200: #B2AFB6;
+    --gray-300: #98959D;
+    --gray-400: #7A767F;
+    --gray-500: #3E3C41;
+    --gray-600: #2F2C30;
+    --gray-700: #232225;
+    --gray-800: #19181B;
+    --gray-900: #050505;
+
+
+    --font-family: "Catamaran", sans-serif;
+    --title-lg: 900 25px/24px var(--font-family);
+    --title-md: 900 16px/24px var(--font-family);
+    --title-sm: 900 14px/20px var(--font-family);
+    --text-md: 400 16px/24px var(--font-family);
+    --text-sm: 400 14px/20px var(--font-family);
+}
+
+html,
+body,
+input,
+button {
+    font-family: var(--font-family)
+}
+
+body {
+    background-color: var(--gray-800);
+    color: var(--gray-300);
+    font: var(--text-md);
+}
+
+section+section {
+    margin-top: 32px;
+}
+
+h1,
+h2 {
+    color: var(--gray-100);
+    font: var(--title-lg);
+}
+
+.label-scheduling {
+    font: var(--title-md);
+    color: var(--gray-200);
+    margin-bottom: 8px;
+    display: block;
+}
+
+#app {
+    display: flex;
+    gap: 12px;
+    height: 100%;
+    padding: 12px;
+}
+
+aside {
+    max-width: 498px;
+    background-color: var(--gray-700);
+    border-radius: 12px;
+    padding: 80px;
+}
+
+aside {
+
+    form div,
+    .scheduling-date {
+        position: relative;
+
+    }
+
+    ;
+
+    form div svg,
+    .scheduling-date svg {
+        position: absolute;
+        top: 48px;
+        left: 12px
+    }
+
+    /* input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+} */
+
+
+    input {
+        border: none;
+        width: 100%;
+        padding: 12px 12px 12px 36px;
+        border-radius: 8px;
+        background-color: transparent;
+        border: 1px solid var(--gray-500);
+        font: var(--text-md);
+        color: var(--gray-200);
+
+        transition: 0.3s;
+        outline: 0;
+    }
+
+    input:focus {
+        border: 1px solid var(--yellow);
+    }
+
+    form button {
+        border: none;
+        border-radius: 8px;
+        width: 100%;
+        padding: 16px;
+        border-radius: 4px;
+        background-color: var(--yellow);
+        font: var(--title-sm);
+        color: var(--gray-900);
+        text-transform: uppercase;
+        margin-top: 24px;
+        cursor: pointer;
+    }
+}
+
+aside header p {
+    font: var(--text-sm);
+    margin: 8px 0px 24px 0px;
+    color: var(--gray-300);
+}
+
+.schedules {
+    margin-bottom: 32px;
+
+    div+div {
+        margin-top: 16px;
+    }
+}
+
+.schedule-period {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.slot {
+    padding: 8px 22px;
+    max-width: 75px;
+
+    border: 1px solid var(--gray-500);
+    border-radius: 12px;
+
+    background: var(--gray-600);
+    color: var(--gray-200);
+    font: var(--text-md);
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.slot:hover:not(.disabled) {
+    border-color: var(--700);
+}
+
+.slot.selected {
+    color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.slot.disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+
+/*=========== main =============*/
+
+main {
+    width: 906px;
+    padding: 80px 112px;
+
+    header p {
+        font: var(--text-sm);
+        margin-top: 8px;
+    }
+
+    section .filter {
+        position: relative;
+    }
+
+    section .filter svg {
+        position: absolute;
+        top: 14px;
+        left: 10px
+    }
+
+
+    input {
+        border: none;
+        width: 100%;
+        padding: 10px 10px 10px 36px;
+        border-radius: 8px;
+        background-color: transparent;
+        border: 1px solid var(--gray-500);
+        font: var(--text-md);
+        color: var(--gray-200);
+
+        transition: 0.3s;
+        outline: 0;
+    }
+
+    input:focus {
+        border: 1px solid var(--yellow);
+    }
+
+
+    .header-main-appointments {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-schedule {
+        border: 1px solid var(--gray-600);
+        border-radius: 12px;
+    }
+
+    .card-schedule .appointment {
+        padding: 8px 20px;
+    }
+
+    .appointment time {
+        font-weight: bold;
+        margin-right: 20px;
+    }
+
+    .card-schedule+.card-schedule {
+        margin-top: 20px;
+    }
+
+    .card-schedule header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        border-bottom: 1px solid var(--gray-600);
+    }
+
+    .card-schedule header div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .card-schedule header span {
+        margin-bottom: -3px;
+        font: var(--text-sm)
+    }
+}
