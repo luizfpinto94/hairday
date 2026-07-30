@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hair Day | App</title>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -159,95 +159,7 @@
         </main>
     </div>
 
-    <script>
-        const schedules = {
-            morning: [
-                { hora: "09:00", disponivel: true },
-                { hora: "10:00", disponivel: true },
-                { hora: "11:00", disponivel: false },
-                { hora: "12:00", disponivel: true },
-            ],
-
-            afternoon: [
-                { hora: "13:00", disponivel: false },
-                { hora: "14:00", disponivel: true },
-                { hora: "15:00", disponivel: true },
-                { hora: "16:00", disponivel: false },
-            ],
-
-            night: [
-                { hora: "19:00", disponivel: true },
-                { hora: "20:00", disponivel: false },
-                { hora: "21:00", disponivel: true },
-                { hora: "22:00", disponivel: true },
-
-            ]
-        };
-
-
-        function createSlotButton(schedule) {
-
-            const button = document.createElement("button");
-
-            button.textContent = schedule.hora;
-            button.classList.add("slot");
-
-
-            if (!schedule.disponivel) {
-                button.classList.add("disabled");
-                button.disabled = true;
-            }
-
-
-            button.addEventListener("click", () => {
-
-                document
-                    .querySelectorAll(".slot.selected")
-                    .forEach(btn => {
-                        btn.classList.remove("selected");
-                    });
-
-
-                button.classList.add("selected");
-
-                console.log("Horário escolhido:", schedule.hora);
-
-            });
-
-
-            return button;
-        }
-
-
-
-        function renderSchedules() {
-
-            const containers = document.querySelectorAll("[data-period]");
-
-
-            containers.forEach(container => {
-
-                const period = container.dataset.period;
-
-                const hours = schedules[period];
-
-
-                hours.forEach(schedule => {
-
-                    const button = createSlotButton(schedule);
-
-                    container.appendChild(button);
-
-                });
-
-            });
-
-        }
-
-
-        renderSchedules();
-    </script>
-
+    <script src="scripts/global.js"></script>
 
 </body>
 
